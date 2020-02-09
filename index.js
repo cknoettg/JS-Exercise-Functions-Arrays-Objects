@@ -41,7 +41,7 @@ function addNumbers(num1, num2) {
 */
 function makePersonObject(ids,names,emails) {
   /* code here */
-  const myObject = {
+  let myObject = {
     id: ids,
     name: names,
     email: emails
@@ -62,9 +62,9 @@ function makePersonObject(ids,names,emails) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(names) {
+function getName(myObject) {
   /* code here */
-  name: names;
+  return 'Hello, my name is ${myObject.name}';
 }
 
 /**
@@ -80,13 +80,19 @@ function getName(names) {
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
+function makeSmartPerson(names) {
   /* code here */
+  let myObject = {
+    name: names,
+    sum: function(num1,num2){
+      return num1 + num2;
+    },
+    speak: function(){
+      return 'Hello, ny name is ${names}';
+    }
+  }
+  return myObject;
 }
-
-
-
-
 
 /*
 // ⭐️ Example Test Data ⭐️
