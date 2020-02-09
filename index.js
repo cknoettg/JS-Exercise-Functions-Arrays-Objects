@@ -64,7 +64,7 @@ function makePersonObject(ids,names,emails) {
 */
 function getName(myObject) {
   /* code here */
-  return 'Hello, my name is ${myObject.name}';
+  return `Hello, my name is ${myObject.name}`;
 }
 
 /**
@@ -88,7 +88,7 @@ function makeSmartPerson(names) {
       return num1 + num2;
     },
     speak: function(){
-      return 'Hello, ny name is ${this.name}';
+      return `Hello, ny name is ${names}`;
     }
   }
   return myObject;
@@ -150,13 +150,11 @@ function get3rdCar(inventory) {
 */
 function getCarInfoByIndex(inventory, index) {
   /* code here */
-  const second = inventory.find((item, index) => {
-    return index === 1;
-  })
-  const third = inventory.find((item, index) => {
-    return index === 2;
-  })
-  return 'This is a ${second.car_make} ${third.car_model}';
+  for (let i = 0; i < inventory.length; i++) {
+    if (i === index) {
+      return `This is a ${inventory[i].car_make} ${inventory[i].car_model}`;
+    }
+  }
 }
 
 /**
