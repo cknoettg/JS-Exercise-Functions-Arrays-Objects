@@ -88,7 +88,7 @@ function makeSmartPerson(names) {
       return num1 + num2;
     },
     speak: function(){
-      return 'Hello, ny name is ${names}';
+      return 'Hello, ny name is ${this.name}';
     }
   }
   return myObject;
@@ -150,6 +150,13 @@ function get3rdCar(inventory) {
 */
 function getCarInfoByIndex(inventory, index) {
   /* code here */
+  const second = inventory.find((item, index) => {
+    return index === 1;
+  })
+  const third = inventory.find((item, index) => {
+    return index === 2;
+  })
+  return 'This is a ${second.car_make} ${third.car_model}';
 }
 
 /**
